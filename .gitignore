@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# PyCharm project files
+.idea/
+
+# VS Code project files (just in case)
+.vscode/
+
+# macOS junk
+.DS_Store
+
+# Windows junk
+Thumbs.db
+
+# Test report folders (optional)
+reports/
