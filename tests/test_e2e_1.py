@@ -41,16 +41,16 @@ class TestUI:
     @pytest.mark.dependency(name="click_checkout", depends=["cart"])
     def test_click_checkout(self):
         self.cart_page.click_checkout()
-        assert 'checkout-step-one.html' in self.driver.current_url
+        assert "checkout-step-one.html" in self.driver.current_url
 
     @pytest.mark.dependency(name="checkout_step_1", depends=["click_checkout"])
     @pytest.mark.parametrize("user", test_data)
     def test_checkout_step_one(self, user):
         self.checkout_page.fill_customer_details(user["first_name"], user["last_name"], user["postal_code"])
         self.checkout_page.click_continue()
-        assert 'checkout-step-two.html' in self.driver.current_url
+        assert "checkout-step-two.html" in self.driver.current_url
 
     @pytest.mark.dependency(name="checkout_step_2", depends=["checkout_step_1"])
     def test_checkout_step_two(self):
         self.checkout_page.click_finish()
-        assert 'checkout-complete.html' in self.driver.current_url
+        assert "checkout-complete.html" in self.driver.current_url
