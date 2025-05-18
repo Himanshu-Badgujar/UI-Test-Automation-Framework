@@ -40,10 +40,3 @@ jobs:
       - name: Run tests
         run: pytest
 
-      - name: Upload test report
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: pytest-report
-          path: reports/report.html
-
