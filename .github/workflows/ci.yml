@@ -12,11 +12,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      selenium:
-        image: selenium/standalone-chrome:latest
-        options: --shm-size=2g
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,8 +25,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           sudo apt-get install -y chromium-browser chromium-chromedriver
-          sudo ln -s /usr/bin/chromedriver /usr/local/bin/chromedriver
-          sudo ln -s /usr/bin/chromium-browser /usr/bin/google-chrome
           pip install -r requirements.txt
 
       - name: Lint with flake8
