@@ -2,3 +2,5 @@ selenium
 pytest
 pytest-dependency
 pytest-html
+flake8
+black
