@@ -23,7 +23,3 @@ Thumbs.db
 
 # Test report folders
 reports/
-
-# Linting
-.flake8
-pyproject.toml
